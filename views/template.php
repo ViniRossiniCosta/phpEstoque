@@ -10,4 +10,5 @@
 		$this->loadViewInTemplate($viewName, $viewData);
 		?>
 	</body>
+	<script src="<?php echo BASE_URL ?>assets/js/jquery.min.js"></script>
 </html>
