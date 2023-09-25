@@ -3,16 +3,11 @@ require 'environment.php';
 
 global $config;
 global $db;
-define("BASE_URL", "http://localhost:8080/simples/arq_mvc/");
 
 $config = array();
 if(ENVIRONMENT == 'development') {
+	define("BASE_URL", "http://localhost:8080/simples/phpEstoque/");
 	$config['dbname'] = 'estoque_vini';
-	$config['host'] = 'localhost';
-	$config['dbuser'] = 'root';
-	$config['dbpass'] = '';
-} else {
-	$config['dbname'] = 'nova_loja';
 	$config['host'] = 'localhost';
 	$config['dbuser'] = 'root';
 	$config['dbpass'] = '';
