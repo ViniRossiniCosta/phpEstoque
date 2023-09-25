@@ -42,7 +42,13 @@ class homeController extends Controller {
         if(!empty($_POST['cod'])) {
             $cod = $_POST['cod'];
             $name = $_POST['name'];
+            $price = $_POST['price'];
+            $quantity = $_POST['quantity'];
+            $min_quantity = $_POST['min_quantity'];
+
+            $p->addProduct($cod, $name, $quantity, $min_quantity);
         }
+        $this->loadTemplate('add', $data);
     }
 
 }
