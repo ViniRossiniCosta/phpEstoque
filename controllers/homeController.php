@@ -4,7 +4,7 @@ class homeController extends Controller {
     private $user;
 
     public function __construct() {
-        parent :: __construct();
+        parent ::__construct();
 
         $this->user = new Users();
         if(!$this->user->checkLogin()){
