@@ -36,7 +36,9 @@ class homeController extends Controller {
     }
 
     public function add() {
-        $data = array();
+        $data = array(
+
+        );
         $p = new Products();
 
         if(!empty($_POST['cod'])) {
@@ -46,8 +48,13 @@ class homeController extends Controller {
             $quantity = $_POST['quantity'];
             $min_quantity = $_POST['min_quantity'];
 
-            $p->addProduct($cod, $name, $quantity, $min_quantity);
+
+            $p->addProducts($cod, $name, $quantity, $min_quantity);
+            header("Location: ".BASE_URL);
+            exit;
         }
+        $data['info'] = $p->getProduct($id);
+
         $this->loadTemplate('add', $data);
     }
 

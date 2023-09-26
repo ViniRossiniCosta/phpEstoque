@@ -1,29 +1,27 @@
-<!DOCTYPE html>
-<html>
+<h1>Relatorio De Produto</h1>
 
-<head>
-	<meta charset="utf-8" />
-	<title>Sistema de Estoque</title>
-	<meta name="viewport" content="width=device-width, initial-scale=1" />
-	<link rel="stylesheet" href="<?php echo BASE_URL; ?>assets/css/style.css">
-	<title>Sistema Estoque</title>
-</head>
+<table border="1" width="500">
+    <tr>
+        <th>Nome do Produto</th>
+        <th>Qtd.</th>
+        <th>Qtd. Minima</th>
+        <th>Diferenca produtos</th>
+    </tr>
+    <?php foreach ($list as $item): ?>
+        <tr>
+            <td>
+                <?php echo $item['name']; ?>
+            </td>
+            <td>
+                <?php echo $item['quantity']; ?>
+            </td>
+            <td>
+                <?php echo $item['min_quantity']; ?>
+            </td>
+            <td>
+                <?php echo floatval($item['min_quantity']) - floatval($item['quantity']); ?>
+            </td>
+        </tr>
+    <?php endforeach; ?>
+</table>
 
-<body>
-	<?php if(isset($viewData['menu'])): ?>
-	<div class="header">
-		<nav>
-			<?php foreach($viewData['menu'] as $url => $menutitle): ?>
-
-			<?php endforeach; ?>
-		</nav>
-	</div>
-	<div class="container">
-		<?php
-		$this->loadViewInTemplate($viewName, $viewData);
-		?>
-	</div>
-</body>
-<script src="<?php echo BASE_URL ?>assets/js/jquery.min.js"></script>
-
-</html>
