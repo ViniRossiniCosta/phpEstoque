@@ -3,10 +3,10 @@ require 'environment.php';
 
 global $config;
 global $db;
+define("BASE_URL", "http://localhost:8080/simples/phpEstoque");
 
 $config = array();
 if (ENVIRONMENT == 'development') {
-	define("BASE_URL", "http://localhost:8080/simples/phpEstoque");
 	$config['dbname'] = 'estoque_vini';
 	$config['host'] = 'localhost';
 	$config['dbuser'] = 'root';
