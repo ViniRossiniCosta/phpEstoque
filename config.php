@@ -6,7 +6,7 @@ global $db;
 
 $config = array();
 if (ENVIRONMENT == 'development') {
-	define("BASE_URL", "http://localhost:8080/simples/phpEstoque/");
+	define("BASE_URL", "http://localhost:8080/simples/phpEstoque");
 	$config['dbname'] = 'estoque_vini';
 	$config['host'] = 'localhost';
 	$config['dbuser'] = 'root';
