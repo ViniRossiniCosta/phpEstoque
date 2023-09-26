@@ -1,10 +1,9 @@
 <?php
-
 class loginController extends Controller
 {
-
     public function index()
     {
+
         $data = array(
             'msg' => ''
         );
@@ -16,26 +15,21 @@ class loginController extends Controller
             $users = new Users();
 
             if ($users->verifyUser($unumber, $upass)) {
-                $token = $users->createToken($unumber);
+                $token  = $users ->createToken ($unumber);
                 $_SESSION['token'] = $token;
 
-                header("Location: " . BASE_URL);
+                header("Location: ".BASE_URL);
                 exit;
             } else {
-                $data['msg'] = 'Numero e/ou senha incorretos';
+                $data['msg'] = "Numero e/ou senha errados";
             }
         }
-
-        $this->loadView('login', $data);
+        $this->loadView('/login', $data);
     }
 
-    public function sair()
-    {
+    public function sair(){
         unset($_SESSION['token']);
-        header("Location: " . BASE_URL . "login");
+        header("Location:".BASE_URL."/login");
         exit;
     }
-
 }
-
-?>

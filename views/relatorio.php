@@ -1,3 +1,26 @@
-<h1>Relatorio</h1>
+<h1>Relatorio De Produto</h1>
 
-<table border="1"></table> 
+<table border="1" width="500">
+    <tr>
+        <th>Nome do Produto</th>
+        <th>Qtd.</th>
+        <th>Qtd. Minima</th>
+        <th>Diferenca produtos</th>
+    </tr>
+    <?php foreach ($list as $item): ?>
+        <tr>
+            <td>
+                <?php echo $item['name']; ?>
+            </td>
+            <td>
+                <?php echo $item['quantity']; ?>
+            </td>
+            <td>
+                <?php echo $item['min_quantity']; ?>
+            </td>
+            <td>
+                <?php echo floatval($item['min_quantity']) - floatval($item['quantity']); ?>
+            </td>
+        </tr>
+    <?php endforeach; ?>
+</table>
