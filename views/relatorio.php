@@ -1,11 +1,11 @@
-<h1>Relatorio De Produto</h1>
+<h1>Relatorio</h1>
 
 <table border="1" width="500">
     <tr>
         <th>Nome do Produto</th>
         <th>Qtd.</th>
         <th>Qtd. Minima</th>
-        <th>Diferenca produtos</th>
+        <th>Diferença</th>
     </tr>
     <?php foreach ($list as $item): ?>
         <tr>
@@ -24,3 +24,4 @@
         </tr>
     <?php endforeach; ?>
 </table>
+

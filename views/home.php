@@ -1,33 +1,45 @@
-<a href="<?php echo BASE_URL; ?>home/add">Adicionar Produto</a>
-<a href="<?php echo BASE_URL; ?>home/relatorio">Relatorio</a>
+<div class="container">
+    <fieldset>
+        <form method="GET">
+            <p class="text-center h5">Digite o nome do produto ou Código do produto</p>
+            <input type="text" name="busca" id="busca" class="container form-control"
+                value="<?php echo (!empty($_GET['busca'])) ? $_GET['busca'] : ''; ?>"
+                placeholder="" style="width:20rem">
+        </form>
+    </fieldset>
+    <br>
+</div>
 
-<fieldset>
-    <form action="" method="GET">
-        <input type="text" name="busca" style="width: 100%; height:40px; font-size:18px;" placeholder="bom dia, digite algo"
-        value="<?php echo (!empty($_GET['busca']))?$_GET['busca']:''; ?>">
-    </form>
-</fieldset>
-<br><br>
-
-<table border="1" width="100%">
+<table border="0" width="80%" class="container">
     <tr>
-        <th>Cod</th>
+        <th>Cód.</th>
         <th>Nome</th>
-        <th>Preço Unit</th>
-        <th>Qnt</th>
-        <th>Qnt Min</th>
-        <th>ações</th>
+        <th>Preço Unit.</th>
+        <th>Qtd.</th>
+        <th>Ações</th>
     </tr>
-    <? foreach($list as $item): ?> 
+    <?php foreach ($list as $item): ?>
         <tr>
-            <td><?php echo $item['cod']; ?></td>
-            <td><?php echo $item['name']; ?></td>
-            <td>R$ <?php echo number_format($item['price'], 2, ',', '.'); ?></td>
-            <td><?php echo $item['qunatity']; ?></td>
             <td>
-                <a href="<?php echo BASE_URL; ?>home/del/<?php echo $item['id']; ?>">Deletar</a>
-                <a href="<?php echo BASE_URL; ?>home/edit/<?php echo $item['id']; ?>">Editar</a>
+                <?php echo $item['cod']; ?>
+            </td>
+            <td>
+                <?php echo $item['name']; ?>
+            </td>
+            <td>R$
+                <?php echo number_format($item['price'], 2, ',', '.'); ?>
+            </td>
+            <td>
+                <?php echo $item['quantity']; ?>
+            </td>
+            <td>
+                <a href="<?php echo BASE_URL; ?>/home/edit/<?php echo $item['id']; ?>">Editar</a>
             </td>
         </tr>
     <?php endforeach; ?>
 </table>
+
+<script type="text/javascript">
+    document.getElementById("busca").focus();
+
+</script>

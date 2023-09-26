@@ -1,30 +1,33 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="<?php echo BASE_URL; ?>assets/css/login.css">
-    <title>Login</title>
+    <title>Login Estoque</title>
+    <link rel="stylesheet" href="<?php echo BASE_URL; ?>/assets/css/login.css">
 </head>
 
 <body>
     <div class="loginarea">
-        <form action="" method="post">
-            Seu núnero:<br>
-            <input type="text" name="number" id=""><br><br>
-            Sua senha:<br>
-            <input type="text" name="password" id=""><br><br>
+        <form method="POST">
+
+            Seu Numero:<br />
+            <input type="text" name="number" /><br><br />
+
+            Sua Senha:<br />
+            <input type="password" name="password" /><br><br />
 
             <input type="submit" value="Entrar">
-        </form>
-    </div>
 
-    <?php if (!empty($msg)): ?>
+        </form>
+
+        <?php if (!empty($msg))
+            ; ?>
         <h2>
-            <?php echo $msg ?>
+            <?php echo $msg; ?>
         </h2>
-    <?php endif; ?>
+    </div>
 </body>
 
 </html>
