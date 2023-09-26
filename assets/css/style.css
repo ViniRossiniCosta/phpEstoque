@@ -2,3 +2,35 @@
     max-width: 1000px;
     margin: auto;
 }
+
+table a {
+    color: #0000ff;
+    text-decoration: none;
+}
+
+table a:hover {
+    text-decoration: underline;
+}
+
+#busca {
+    outline: 0;
+    border: 0;
+}
+
+.form input[type=text],
+.form select,
+.form textarea {
+    width: 100%;
+    height: 35px;
+    font-size: 13px;
+    padding-left: 10px;
+    border: 2px solid #ddd;
+    outline: 0;
+}
+
+.form input[type='submit'] {
+    background-color: #cccccc;
+    padding: 5px 10px;
+    border-radius: 10px;
+    font-weight: bold;
+}
