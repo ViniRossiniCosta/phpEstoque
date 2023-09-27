@@ -12,7 +12,7 @@
 	<script type="text/javascript" src="<?php echo BASE_URL; ?>/assets/js/jquery.mask.js"></script>
 	<script type="text/javascript" src="<?php echo BASE_URL; ?>/assets/js/script.js"></script>
 
-	<link rel="stylesheet" href="<?php echo BASE_URL; ?>/assets/css/home.css">
+	<link rel="stylesheet" href="<?php echo BASE_URL; ?>assets/css/home.css">
 </head>
 
 <body>
