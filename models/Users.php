@@ -1,9 +1,7 @@
 <?php
-
 class Users extends Model
 {
     private $info;
-
     public function verifyUser($number, $pass)
     {
 
@@ -19,7 +17,6 @@ class Users extends Model
             return false;
         }
     }
-
     public function createToken($unumber)
     {
         $token = md5(time() . rand(0, 9999) . time() . rand(0, 9999));
@@ -33,7 +30,6 @@ class Users extends Model
         return $token;
     }
 
-
     public function checkLogin()
     {
         if (!empty($_SESSION['token'])) {
@@ -45,15 +41,11 @@ class Users extends Model
             $sql->execute();
 
             if ($sql->rowCount() > 0) {
-                $this->info = $sql->fetch();
-
+                $this->info=$sql->fetchAll();
                 return true;
             }
         }
-
         return false;
     }
-
 }
-
 ?>

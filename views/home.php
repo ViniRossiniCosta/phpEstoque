@@ -10,7 +10,7 @@
     <br>
 </div>
 
-<table border="2" width="80%" class="container">
+<table border="0" width="80%" class="container">
     <tr>
         <th>Cód.</th>
         <th>Nome</th>
